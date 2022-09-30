@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import { Route} from 'react-router-dom';
 import TodoList from './components/TodoList';
 import NewTodo from './components/NewTodo';
 import { Todo } from './todo.model';
@@ -13,16 +14,16 @@ const App: React.FC = () => {
 		]);
 	};
 
-const todoDleteHandler = (todoId: string) => {
-  setTodos(prevTodos => {
-    return prevTodos.filter(todo => todo.id !== todoId);
-  })
-};
+	const todoDleteHandler = (todoId: string) => {
+		setTodos((prevTodos) => {
+			return prevTodos.filter((todo) => todo.id !== todoId);
+		});
+	};
 
 	return (
 		<div className='App'>
 			<NewTodo onAddTodo={todoAddHandler} />
-			<TodoList items={todos} onDeleteTodo={todoDleteHandler}/>
+			<TodoList items={todos} onDeleteTodo={todoDleteHandler} />
 		</div>
 	);
 };
