@@ -7,4 +7,8 @@ describe('Add some test..', () => {
 		render(<App />);
         screen.getByText('Hello in TodoApp')
 	});
+    test('Should search by role', () => {
+        render(<App />);
+        screen.getByRole('heading')
+    })
 });
